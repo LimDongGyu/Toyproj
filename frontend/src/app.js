@@ -1,7 +1,6 @@
 import MainController from "./controllers/MainController.js";
 import './style.css';
 
-
 document.addEventListener("DOMContentLoaded", () => {
   new MainController();
 

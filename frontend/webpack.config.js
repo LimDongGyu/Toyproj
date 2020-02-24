@@ -6,6 +6,9 @@ const path = require('path');
 const CustomPlugin = require('./customplugin');
 const webpack = require('webpack');
 const banner = require('./banner.js')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const MiniCssContractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: 'development',
@@ -18,16 +21,20 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.jpg$/,
-                loader: 'url-loader',
-                options:{
-                    publicPath: './dist/',
-                    name: '[name].[ext]?[hash]',
-                    limit: 5000,    //5kb 미만의 파일만 data url로 처리
-                }
-            },
-            /* { 
+            // {
+            //     test: /\.jpg$/,
+            //     loader: 'url-loader',
+            //     options:{
+            //         publicPath: './dist/',
+            //         name: '[name].[ext]?[hash]',
+            //         limit: 5000,    //5kb 미만의 파일만 data url로 처리
+            //     }
+            // },
+            // {
+            //     test: /\.jpg$/,
+            //     loader: 'file-loader',
+            // },
+            { 
                 test: /\.jpg$/, 
                 loader: 'file-loader', 
                 options:{
@@ -37,9 +44,17 @@ module.exports = {
                     //publicPath: file-loader가 처리하는 파일을 모듈로 사용할 때, 경로 앞에 추가되는 문자열
                     //name: loader가 파일을 output에 복사할 때 사용하는 파일 이름
                 }
-            }, */
-            { test: /\.css$/, use: ['style-loader', 'css-loader']},
-        ],
+            }, 
+            { 
+                test: /\.css$/, 
+                use: ['style-loader', 'css-loader']
+                /* use: [
+                    process.env.NODE_ENV === 'production'
+                    ? MiniCssContractPlugin.loader  //배포 환경
+                    : 'style-loader', 'css-loader' //개발 환경
+                ] */
+            }
+        ]
     },
     plugins: [
         /**
@@ -56,17 +71,52 @@ module.exports = {
              *  2. 설정파일 상단에 const banner = require('./banner.js); 선언
              *  3. plugins 속성에 new webpack.BannerPlugin(banner);
              */
-        new webpack.BannerPlugin(banner),
+        // new webpack.BannerPlugin(banner),
 
         /**
          * 2. DefinePlugin()
          * 
          * //노드 환경정보인 process.env.NODE_ENV는 기본적으로 있는 설정값
          */
-        new webpack.DefinePlugin({
-            VERSION: JSON.stringify('v.1.2.3'),
-            MAX_COUNT: JSON.stringify(999),
-            'api.domain': JSON.stringify('http://127.0.0.1'),
+        // new webpack.DefinePlugin({
+        //     VERSION: JSON.stringify('v.1.2.3'),
+        //     MAX_COUNT: JSON.stringify(999),
+        //     'api.domain': JSON.stringify('http://127.0.0.1'),
+        // }),
+
+        /**
+         * 3. Html-Webpack-Plugin
+         */
+        new HtmlWebpackPlugin({
+            template: './index.html',   //템플릿 경로 지정
+            templateParameters:{
+                //템플릿에 주입할 파라미터 변수 지정
+                env: process.env.NODE_ENV === 'development' ? '(개발용)' : '',
+                //NODE_ENV=development이면 타이틀(개발용)
+                //NODE_ENV=production이면 타이틀로 출력 됨
+            },
+            //운영환경에서는 파일을 압축하고 불필요한 주석 제거 필요
+            minify: process.env.NODE_ENV === 'production' ? {
+                collapseWhitespace: true,       //빈칸 제거
+                removeComments: true,           //주석 제거
+            }: false,
+            //정적 파일을 불러올 때 쿼리문자열에 webpack 해시 값을 추가
+            // hash: true,
         }),
+
+        /**
+         * 4. CleanWebpackPlugin()
+         */
+        // new CleanWebpackPlugin(),
+
+        /**
+         * 5. MiniCssContractPlugin()
+         */
+            //(
+            //filename에 설정한 값으로 output 경로에 css 파일이 생성될 것
+            //process.env.NODE_ENV === 'production'
+            //? [ new MiniCssContractPlugin({filename: `[name].css`})]
+            //: []
+            //),
     ]
 }

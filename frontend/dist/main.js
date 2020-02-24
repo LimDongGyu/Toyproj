@@ -1,8 +1,3 @@
-/*!
- * Build Date: 2020. 2. 24. 오후 1:33:28
- * Author: limdg5335
- * 
- */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -98,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nvar ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ \"./node_modules/css-loader/dist/runtime/getUrl.js\");\nvar ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ./images/city-4490237_1920.jpg */ \"./src/images/city-4490237_1920.jpg\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);\n// Module\nexports.push([module.i, \"body{\\r\\n    background-image: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \");\\r\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nvar ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ \"./node_modules/css-loader/dist/runtime/getUrl.js\");\nvar ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ./images/city-4490237_1920.jpg */ \"./src/images/city-4490237_1920.jpg\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);\n// Module\nexports.push([module.i, \"body{\\r\\n    background-image: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \");\\r\\n    /* background-color: yellow; */\\r\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -146,7 +141,7 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_MainController_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/MainController.js */ \"./src/controllers/MainController.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  new _controllers_MainController_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\n\n  //definePlugin()\n  console.log(\"development\");\n  console.log(\"v.1.2.3\");\n  console.log(999);\n  console.log(\"http://127.0.0.1\");\n});\n\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_MainController_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/MainController.js */ \"./src/controllers/MainController.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  new _controllers_MainController_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\n\n  //definePlugin()\n  console.log(\"development\");\n  console.log(VERSION);\n  console.log(MAX_COUNT);\n  console.log(api.domain);\n});\n\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
@@ -289,7 +284,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return View; });\nclass View {\n  constructor(el) {\n    if (!el) throw el;\n\n    this.el = el;\n    return this;\n  }\n\n  on(event, handler) {\n    this.el.addEventListener(event, handler);\n    return this;\n  }\n\n  emit(event, data) {\n    const evt = new CustomEvent(event, {\n      detail: data\n    });\n    this.el.dispatchEvent(evt);\n    return this;\n  }\n\n  hide() {\n    this.el.style.display = \"none\";\n    return this;\n  }\n\n  show() {\n    this.el.style.display = \"\";\n    return this;\n  }\n}\n\n\n//# sourceURL=webpack:///./src/views/View.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return View; });\nclass View {\r\n    constructor(el) {\r\n      if (!el) throw el;\r\n  \r\n      this.el = el;\r\n      return this;\r\n    }\r\n  \r\n    on(event, handler) {\r\n      this.el.addEventListener(event, handler);\r\n      return this;\r\n    }\r\n  \r\n    emit(event, data) {\r\n      const evt = new CustomEvent(event, {\r\n        detail: data\r\n      });\r\n      this.el.dispatchEvent(evt);\r\n      return this;\r\n    }\r\n  \r\n    hide() {\r\n      this.el.style.display = \"none\";\r\n      return this;\r\n    }\r\n  \r\n    show() {\r\n      this.el.style.display = \"\";\r\n      return this;\r\n    }\r\n  }\r\n  \n\n//# sourceURL=webpack:///./src/views/View.js?");
 
 /***/ })
 
