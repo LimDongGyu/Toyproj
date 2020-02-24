@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>검색</title>
+        <!--TODO CSS 파일을 엔트리포인트(app.js에서 로딩), 웹팩에서 로딩할 수 있도록 로더를 설정해야 함 -->
     <!-- <link rel="stylesheet" href="./src/main.css"> -->
+    <!--TODO HtmlWebpackPlugin에서 빌드 환경을 주입하도록 웹팩을 구성-->
+    <!--TODO HtmlWebpackPlugin에서 엔트리포인트(main.css)를 로딩하도록 웹팩을 구성-->
   </head>
   <body>
     <div id="app">
@@ -28,6 +31,7 @@
     </div>
 
     <!-- TODO: 웹팩으로 빌드한 자바스크립트를 여기에 로딩하세요 -->
-    <script src="main.js"></script>
+    <script src="./dist/main.js"></script>
+    <!-- TODO: HtmlTemplatePlugin에서 엔트리포인트(main.js)를 로딩하도록 웹팩을 구성-->
   </body>
 </html> 

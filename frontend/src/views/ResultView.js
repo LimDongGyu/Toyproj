@@ -1,5 +1,9 @@
 import View from "./View.js";
 
+
+//TODO : 파일을 로딩할 수 있도록 웹팩 로더 설정을 추가하라
+//file-loader나 url-loader
+
 export default class ResultView extends View {
   constructor(el) {
     super(el);
