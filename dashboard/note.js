@@ -34,9 +34,23 @@
   *      [terminal] npm install
   *    0.6. database migration
   * 
-  * 1. /root/resources/js/bootstraps.js
-  *   15줄 추가 require('admin-lte');
-  * 2. /root/resources/sass/app.scss
-  *   추가 @import '~admin-lte/dist/css/adminlte.css';
+  *  1. /root/resources/js/bootstraps.js
+  *    15줄 추가 require('admin-lte');
+  *  2. /root/resources/sass/app.scss
+  *    추가 @import '~admin-lte/dist/css/adminlte.css';
   * 
+  *             --- default setting end---
+  *             --- for confirm -> php artisan serve ---
+  * 
+  * 
+  * 
+  * 
+  * 
+  * * git 따고 나면
+  *     ㄴ npm install
+  *     ㄴ compomser install -> vendor 의존성
+  *     ㄴ .env.example을 이용해 .env 파일 생성 및 수정
+  *       ㄴ DB 생성
+  *     ㄴ admin-lte 설치
+  *     ㄴ php artisan key:generate
   */
