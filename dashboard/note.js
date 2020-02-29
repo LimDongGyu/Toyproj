@@ -38,5 +38,6 @@
   *   15줄 추가 require('admin-lte');
   * 2. /root/resources/sass/app.scss
   *   추가 @import '~admin-lte/dist/css/adminlte.css';
+  * 3. npm run watch
   * 
   */
